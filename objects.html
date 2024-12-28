@@ -16,28 +16,76 @@
             // product.name = 'Pencil'
             // console.log(product);
 
-            const product2 = {
-                name: 'Book',
-                price: 200,
-                rating: {
-                    stars: 4.5,
-                    counts: 25
-                },
-                first: function function1() {
-                    console.log('Function Inside Objects');
+            // const product2 = {
+            //     name: 'Book',
+            //     price: 200,
+            //     rating: {
+            //         stars: 4.5,
+            //         counts: 25
+            //     },
+            //     first: function function1() {
+            //         console.log('Function Inside Objects');
+            //     }
+            // }
+            // console.log(product2);
+            // console.log(product2.name);
+            // console.log(product2['price']);
+
+            // console.log(product2.rating.stars);
+            // product2.first();
+
+            // console.log(JSON.stringify(product2));
+
+            // const jsonString = JSON.stringify(product2);
+            // console.log(JSON.parse(jsonString));
+
+            //Auto-boxing
+            console.log('karan'.length);
+            console.log('karan'.toUpperCase());
+
+            //Objects are refercences
+            const object1 = {
+                message: 'Hello'
+            }
+
+            const object2 = object1;
+
+            const object3 = {
+                message: 'Hello'
+            }
+
+            object1.message = 'Byee'
+
+            console.log(object1.message);
+            console.log(object1 === object3);
+            console.log(object1 === object2);
+
+            //destructuring
+            const object4 = {
+                item: 'Pen',
+                price: 20
+            }
+
+            const {item, price} = object4;
+            console.log(item);
+            console.log(price);
+
+            //short-hand method
+            //short-hand property
+
+            const object5 = {
+                // item : item
+                item,
+                // method: function function1() {
+                //     console.log('method');
+                // }
+                method() {
+                    console.log('method');
                 }
             }
-            console.log(product2);
-            console.log(product2.name);
-            console.log(product2['price']);
 
-            console.log(product2.rating.stars);
-            product2.first();
-
-            console.log(JSON.stringify(product2));
-
-            const jsonString = JSON.stringify(product2);
-            console.log(JSON.parse(jsonString));
+            console.log(object5);
+            object5.method();
         </script>
     </body>
 </html>
