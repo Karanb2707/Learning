@@ -5,16 +5,34 @@
     </head>
     <body>
         <script>
-            const product = {
-                name: 'Pen',
-                price: 10
-            };
-            console.log(product);
-            console.log(product.name);
-            console.log(product.price);
+            // const product = {
+            //     name: 'Pen',
+            //     price: 10
+            // };
+            // console.log(product);
+            // console.log(product.name);
+            // console.log(product.price);
 
-            product.name = 'Pencil'
-            console.log(product);
+            // product.name = 'Pencil'
+            // console.log(product);
+
+            const product2 = {
+                name: 'Book',
+                price: 200,
+                rating: {
+                    stars: 4.5,
+                    counts: 25
+                },
+                first: function function1() {
+                    console.log('Function Inside Objects');
+                }
+            }
+            console.log(product2);
+            console.log(product2.name);
+            console.log(product2['price']);
+
+            console.log(product2.rating.stars);
+            product2.first();
         </script>
     </body>
 </html>
