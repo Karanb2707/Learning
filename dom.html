@@ -4,11 +4,16 @@
         <title>DOM</title>
     </head>
     <body>
-        <button>Hello</button>
+        <button>First</button>
+        <button class="sec-btn">Second</button>
         <script>
 
-            document.querySelector('button');
-            console.log(document.querySelector('button'));
+            console.log(document.querySelector('button').innerHTML);
+
+            document.querySelector('button')
+                .innerHTML = 'Change';
+            
+            console.log(document.querySelector('.sec-btn').innerHTML);
 
             // document.body.innerHTML = '<button>Byee</button>'
 
