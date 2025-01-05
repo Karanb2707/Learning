@@ -18,11 +18,16 @@
             playGame('scissor');
         ">Scissor</button>
 
+        <p class="js-result"></p>
+        <p class="js-moves"></p>
+        <p class="js-score"></p>
+
         <button onclick="
             score.wins = 0;
             score.loses = 0;
             score.ties = 0;
             localStorage.removeItem('score');
+            updateScore();
         ">Reset Score</button>
 
         <script>
@@ -32,6 +37,8 @@
                 loses: 0,
                 ties: 0
             };
+
+            updateScore();
 
             function playGame(playerMove)
             {
@@ -100,8 +107,23 @@
 
                 localStorage.setItem('score', JSON.stringify(score));
 
-                alert(`Computer Choose ${computerMove} and ${result} \n Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}`);
+                updateScore();
+                document.querySelector('.js-result').innerHTML = `${result}!`;
+                document.querySelector('.js-moves').innerHTML = `Your Move: ${playerMove} and Computer Move: ${computerMove}`;
+
+                // alert(`Computer Choose ${computerMove} and ${result} \n Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}`);
             }
+
+            function updateScore()
+            {
+                document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Ties: ${score.ties}`;
+            }
+
+            function updateResult()
+            {
+                document.querySelector('.js-result').innerHTML = `${result}`;
+            }
+
             function pickComputerMove()
             {
                 const randomNumber = Math.random();
