@@ -11,12 +11,20 @@
         <p>Orders under $40 = +$10 shipping</p>
         <p>Orders over $40 = Free Shipping</p>
 
-        <input type="text" placeholder="cost of product" class="js-cost">
+        <input type="text" placeholder="cost of product" class="js-cost" onkeydown="calculateOnKeyDown(event)">
         <button onclick="calculateTotal()" >calculate</button>
 
         <p class="js-total"></p>
 
         <script>
+            function calculateOnKeyDown(event)
+            {
+                if(event.key === 'Enter')
+                {
+                    calculateTotal()   
+                }
+            }
+
             function calculateTotal()
             {
                 const inputCost = document.querySelector('.js-cost');
