@@ -3,6 +3,9 @@
     <head>
         <title>DOM Projects</title>
         <style>
+            body{
+                font-family: Arial;
+            }
             .sub-btn{
                 border: none;
                 background-color: black;
@@ -14,9 +17,22 @@
                 font-weight: bold;
                 cursor: pointer;
                 border-radius: 50px;
+                margin-bottom: 40px;
             }
             .is-subscribed {
                 background-color: rgb(225, 225, 225);
+                color: black;
+            }
+            .cost-input {
+                font-size: 15px;
+                padding: 10px;
+            }
+            .cal-btn {
+                border: none;
+                padding: 12px;
+                font-size: 15px;
+                font-weight: bold;
+                background-color: rgb(119, 255, 119);
                 color: black;
             }
         </style>
@@ -29,8 +45,8 @@
         <p>Orders under $40 = +$10 shipping</p>
         <p>Orders over $40 = Free Shipping</p>
 
-        <input type="text" placeholder="cost of product" class="js-cost" onkeydown="calculateOnKeyDown(event)">
-        <button onclick="calculateTotal()" >calculate</button>
+        <input type="text" placeholder="cost of product" class="js-cost cost-input" onkeydown="calculateOnKeyDown(event)">
+        <button onclick="calculateTotal()" class="cal-btn" >calculate</button>
 
         <p class="js-total"></p>
 
